@@ -37,12 +37,12 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="<?php echo base_url(); ?>Main/enter">Dashboard</a></li>
-                                        <li><a href="<?php echo base_url(); ?>ShowForm/pasien_info/main">Pasien</a>
+                    <li><a href="<?php echo base_url(); ?>ShowForm/patient/main">Pasien</a>
                     </li>
                     <li><a href="<?php echo base_url(); ?>ShowForm/create_medicine_name/main">Buat Opsi</a>
                     </li>
                     <li><a href="<?php echo base_url(); ?>ShowForm/medicine_purchase_info/main">Persediaan</a></li>
-                                        <li><a href="<?php echo base_url(); ?>ShowForm/pasien_info/main">Pasien</a></li>
+                                        <li><a href="<?php echo base_url(); ?>ShowForm/patient/main">Pasien</a></li>
                     <li><a href="<?php echo base_url(); ?>ShowForm/sell_medicine/main">Penjualan</a></li>
                     <li><a href="<?php echo base_url(); ?>ShowForm/profit_loss/main">Keuangan</a></li>
                     <li><a href="<?php echo base_url(); ?>ShowForm/manage_staff/main">Manage Staff</a></li>

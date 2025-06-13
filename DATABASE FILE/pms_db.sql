@@ -299,6 +299,34 @@ INSERT INTO `staff` (`id`, `username`, `password`, `identity`) VALUES
 (2, 'johnny', '5f4dcc3b5aa765d61d8327deb882cf99', 'Staff'),
 (3, 'jsmith', '9ddc44f3f7f78da5781d6cab571b2fc5', 'Staff');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patients`
+--
+
+CREATE TABLE `patients` (
+  `id` int(11) NOT NULL,
+  `full_name` varchar(255) DEFAULT NULL,
+  `birth_place` varchar(255) DEFAULT NULL,
+  `birth_date` date DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `blood_type` varchar(3) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `allergy` text,
+  `hereditary_diseases` text,
+  `blood_sugar` varchar(50) DEFAULT NULL,
+  `high_blood_pressure` varchar(50) DEFAULT NULL,
+  `blood_pressure_info` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `patients`
+--
+
+INSERT INTO `patients` (`id`, `full_name`, `birth_place`, `birth_date`, `gender`, `blood_type`, `phone`, `allergy`, `hereditary_diseases`, `blood_sugar`, `high_blood_pressure`, `blood_pressure_info`) VALUES
+(1, 'John Doe', 'Sample', '1990-01-01', 'Male', 'O', '555-1234', '', '', '', '', '');
+
 --
 -- Indexes for dumped tables
 --
@@ -367,6 +395,12 @@ ALTER TABLE `staff`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `patients`
+--
+ALTER TABLE `patients`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -429,4 +463,10 @@ ALTER TABLE `sales_product`
 --
 ALTER TABLE `staff`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `patients`
+--
+ALTER TABLE `patients`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
