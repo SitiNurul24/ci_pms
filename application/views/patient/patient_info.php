@@ -4,7 +4,11 @@ if ($msg == "main") {
 } elseif ($msg == "empty") {
     $msg = "Please fill out all required fields";
 } elseif ($msg == "created") {
-    $msg = "Created Successfully";
+    if (!empty($created_id)) {
+        $msg = "Created Successfully. ID: " . $created_id;
+    } else {
+        $msg = "Created Successfully";
+    }
 } elseif ($msg == "edit") {
     $msg = "Edited Successfully";
 } elseif ($msg == "delete") {
@@ -112,19 +116,16 @@ if ($msg == "main") {
                         <table class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th style="text-align: center;">#</th>
+                                    <th style="text-align: center;">ID</th>
                                     <th style="text-align: center;">Name</th>
                                     <th style="text-align: center;">Phone</th>
                                     <th style="text-align: center;">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                $count = 0;
-                                foreach ($all_value as $single_value) {
-                                    $count++; ?>
+                                <?php foreach ($all_value as $single_value) { ?>
                                     <tr>
-                                        <td style="text-align: center;"><?php echo $count; ?></td>
+                                        <td style="text-align: center;"><?php echo $single_value->patient_id; ?></td>
                                         <td style="text-align: center;"><?php echo $single_value->full_name; ?></td>
                                         <td style="text-align: center;"><?php echo $single_value->phone; ?></td>
                                         <td style="text-align: center;">

@@ -368,6 +368,8 @@ class Insert extends CI_Controller
                                         'blood_pressure' => $this->input->post('blood_pressure')
                                 );
                                 $this->CommonModel->insert_data('patients', $insert_data);
+                                $new_id = $this->db->insert_id();
+                                $this->session->set_flashdata('patient_created_id', $new_id);
                                 redirect('ShowForm/patient/created', 'refresh');
                         }
                 } else {

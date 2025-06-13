@@ -277,6 +277,7 @@ public function create_medicine_name($msg) {
                 if ($this->session->userdata('username') != '') {
                         $data['all_value'] = $this->CommonModel->get_all_info('patients');
                         $data['msg'] = $msg;
+                        $data['created_id'] = $this->session->flashdata('patient_created_id');
                         $this->load->view("header", $data);
                         $this->load->view("patient/patient_info", $data);
                         $this->load->view("footer");
