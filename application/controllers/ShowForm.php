@@ -257,19 +257,34 @@ public function create_medicine_name($msg) {
 			$this->load->view('Main/login', $data);
 		}
 	}
-	public function edit_staff_info($id)
-	{
-		if ($this->session->userdata('username') != '') {
-			$data['all_value'] = $this->CommonModel->get_all_info('staff');
-			$data['one_value'] = $this->CommonModel->get_allinfo_byid('staff', 'id', $id);
-			//$data['msg'] = $msg;
-			$this->load->view("header", $data);
-			$this->load->view("edit_manage_staff", $data);
-			$this->load->view("footer");
-		} else {
-			$data['wrong_msg'] = "";
-			$this->load->view('Main/login', $data);
-		}
-	}
+        public function edit_staff_info($id)
+        {
+                if ($this->session->userdata('username') != '') {
+                        $data['all_value'] = $this->CommonModel->get_all_info('staff');
+                        $data['one_value'] = $this->CommonModel->get_allinfo_byid('staff', 'id', $id);
+                        //$data['msg'] = $msg;
+                        $this->load->view("header", $data);
+                        $this->load->view("edit_manage_staff", $data);
+                        $this->load->view("footer");
+                } else {
+                        $data['wrong_msg'] = "";
+                        $this->load->view('Main/login', $data);
+                }
+        }
+
+        // Manage Patient
+        public function patient($msg)
+        {
+                if ($this->session->userdata('username') != '') {
+                        $data['all_value'] = $this->CommonModel->get_all_info('patients');
+                        $data['msg'] = $msg;
+                        $this->load->view("header", $data);
+                        $this->load->view("patient/manage_patient", $data);
+                        $this->load->view("footer");
+                } else {
+                        $data['wrong_msg'] = "";
+                        $this->load->view('Main/login', $data);
+                }
+        }
 
 			}  // end

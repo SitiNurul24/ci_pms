@@ -325,9 +325,9 @@ class Insert extends CI_Controller
 		}
 	}
 	// Create Staff
-	public function edit_staff_info($id) {
-		if ($this->session->userdata('username') != '') { //Check Login
-			$this->form_validation->set_rules('username', 'Username', 'trim|required'); // check form validation
+        public function edit_staff_info($id) {
+                if ($this->session->userdata('username') != '') { //Check Login
+                        $this->form_validation->set_rules('username', 'Username', 'trim|required'); // check form validation
 //			$this->form_validation->set_rules('product_name', 'Product Name', 'trim|required'); // check form validation
 			if ($this->form_validation->run() == FALSE) {
 				redirect('ShowForm/manage_staff/empty', 'refresh'); //If form not  validate
@@ -345,7 +345,37 @@ class Insert extends CI_Controller
 			}
 		} else {
 			$data['wrong_msg'] = "";
-			$this->load->view('Main/login', $data);
-		}
-	}
+                        $this->load->view('Main/login', $data);
+                }
+        }
+
+        // Insert Patient Data
+        public function patient() {
+                if ($this->session->userdata('username') != '') { //Check Login
+                        $this->form_validation->set_rules('full_name', 'Full Name', 'trim|required');
+
+                        if ($this->form_validation->run() == FALSE) {
+                                redirect('ShowForm/patient/empty', 'refresh');
+                        } else {
+                                $insert_data = array(
+                                        'full_name' => $this->input->post('full_name'),
+                                        'birth_place' => $this->input->post('birth_place'),
+                                        'birth_date' => $this->input->post('birth_date'),
+                                        'gender' => $this->input->post('gender'),
+                                        'blood_type' => $this->input->post('blood_type'),
+                                        'phone' => $this->input->post('phone'),
+                                        'allergy' => $this->input->post('allergy'),
+                                        'hereditary_diseases' => $this->input->post('hereditary_diseases'),
+                                        'blood_sugar' => $this->input->post('blood_sugar'),
+                                        'high_blood_pressure' => $this->input->post('high_blood_pressure'),
+                                        'blood_pressure_info' => $this->input->post('blood_pressure_info')
+                                );
+                                $this->CommonModel->insert_data('patients', $insert_data);
+                                redirect('ShowForm/patient/created', 'refresh');
+                        }
+                } else {
+                        $data['wrong_msg'] = '';
+                        $this->load->view('Main/login', $data);
+                }
+        }
 }
