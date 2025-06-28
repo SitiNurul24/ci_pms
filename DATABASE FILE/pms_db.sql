@@ -323,6 +323,25 @@ CREATE TABLE `patients` (
 -- Dumping data for table `patients`
 --
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `doctors`
+--
+
+CREATE TABLE `doctors` (
+  `doctor_id` int(11) NOT NULL,
+  `doctor_code` varchar(20) NOT NULL,
+  `doctor_name` varchar(255) NOT NULL,
+  `doctor_category` varchar(255) DEFAULT NULL,
+  `schedule_day` varchar(50) DEFAULT NULL,
+  `schedule_time` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `doctors`
+--
+
 --
 -- Indexes for dumped tables
 --
@@ -397,6 +416,12 @@ ALTER TABLE `patients`
   ADD PRIMARY KEY (`patient_id`);
 
 --
+-- Indexes for table `doctors`
+--
+ALTER TABLE `doctors`
+  ADD PRIMARY KEY (`doctor_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -465,4 +490,10 @@ ALTER TABLE `staff`
 --
 ALTER TABLE `patients`
   MODIFY `patient_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `doctors`
+--
+ALTER TABLE `doctors`
+  MODIFY `doctor_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
