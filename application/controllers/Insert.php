@@ -402,4 +402,53 @@ class Insert extends CI_Controller
                         $this->load->view('Main/login', $data);
                 }
         }
+
+        public function create_doctor() {
+                if ($this->session->userdata('username') != '') {
+                        $this->form_validation->set_rules('doctor_name', 'Doctor Name', 'trim|required');
+                        if ($this->form_validation->run() == FALSE) {
+                                redirect('ShowForm/doctor/empty', 'refresh');
+                        } else {
+                                $insert_data = array(
+                                        'doctor_code' => $this->generate_doctor_code(),
+                                        'doctor_name' => $this->input->post('doctor_name'),
+                                        'doctor_category' => $this->input->post('doctor_category'),
+                                        'schedule_day' => $this->input->post('schedule_day'),
+                                        'schedule_time' => $this->input->post('schedule_time')
+                                );
+                                $this->CommonModel->insert_data('doctors', $insert_data);
+                                redirect('ShowForm/doctor/created', 'refresh');
+                        }
+                } else {
+                        $data['wrong_msg'] = "";
+                        $this->load->view('Main/login', $data);
+                }
+        }
+
+        public function edit_doctor($id) {
+                if ($this->session->userdata('username') != '') {
+                        $this->form_validation->set_rules('doctor_name', 'Doctor Name', 'trim|required');
+                        if ($this->form_validation->run() == FALSE) {
+                                redirect('ShowForm/doctor/empty', 'refresh');
+                        } else {
+                                $update_data = array(
+                                        'doctor_name' => $this->input->post('doctor_name'),
+                                        'doctor_category' => $this->input->post('doctor_category'),
+                                        'schedule_day' => $this->input->post('schedule_day'),
+                                        'schedule_time' => $this->input->post('schedule_time')
+                                );
+                                $this->CommonModel->update_data_onerow('doctors', $update_data, 'doctor_id', $id);
+                                redirect('ShowForm/doctor/edited', 'refresh');
+                        }
+                } else {
+                        $data['wrong_msg'] = "";
+                        $this->load->view('Main/login', $data);
+                }
+        }
+
+        private function generate_doctor_code() {
+                $last = $this->db->select_max('doctor_id')->get('doctors')->row();
+                $next = ($last && $last->doctor_id) ? $last->doctor_id + 1 : 1;
+                return 'DR' . str_pad($next, 3, '0', STR_PAD_LEFT);
+        }
 }

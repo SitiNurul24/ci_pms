@@ -96,4 +96,14 @@ class Delete extends CI_Controller
                         $this->load->view('Main/login', $data);
                 }
         }
+
+        public function doctor($id) {
+                if ($this->session->userdata('username') != '') {
+                        $this->CommonModel->delete_info('doctor_id', $id, 'doctors');
+                        redirect('ShowForm/doctor/delete', 'refresh');
+                } else {
+                        $data['wrong_msg'] = "";
+                        $this->load->view('Main/login', $data);
+                }
+        }
 }

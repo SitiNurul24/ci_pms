@@ -37,6 +37,7 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="<?php echo base_url(); ?>ShowForm/patient/main">Patient</a></li>
+                    <li><a href="<?php echo base_url(); ?>ShowForm/doctor/main">Queue</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class=""><a href="#">STAFF</a></li>
