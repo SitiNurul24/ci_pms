@@ -47,17 +47,21 @@ foreach ($one_value as $one_info) {
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="doctor_category">Doctor Category</label>
-                                    <input type="text" class="form-control" id="doctor_category" name="doctor_category" value="<?php echo $doctor_category; ?>">
+                                    <select class="form-control" id="doctor_category" name="doctor_category">
+                                        <option value="">Select Category</option>
+                                        <option value="Dentist" <?php echo ($doctor_category == 'Dentist') ? 'selected' : ''; ?>>Dentist</option>
+                                        <option value="General Practitioner" <?php echo ($doctor_category == 'General Practitioner') ? 'selected' : ''; ?>>General Practitioner</option>
+                                    </select>
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="schedule_day">Schedule</label>
-                                    <input type="text" class="form-control" id="schedule_day" name="schedule_day" value="<?php echo $schedule_day; ?>">
+                                    <input type="date" class="form-control" id="schedule_day" name="schedule_day" value="<?php echo $schedule_day; ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="schedule_time">Schedule Time</label>
-                                    <input type="text" class="form-control" id="schedule_time" name="schedule_time" value="<?php echo $schedule_time; ?>">
+                                    <input type="time" class="form-control" id="schedule_time" name="schedule_time" value="<?php echo $schedule_time; ?>">
                                 </div>
                                 <div class="col-sm-4" style="margin-top: 17px;">
                                     <button type="submit" class="pull-left btn btn-primary">Update</button>

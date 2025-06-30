@@ -53,17 +53,21 @@ if ($msg == "main") {
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="doctor_category">Doctor Category</label>
-                                    <input type="text" class="form-control" id="doctor_category" name="doctor_category">
+                                    <select class="form-control" id="doctor_category" name="doctor_category">
+                                        <option value="">Select Category</option>
+                                        <option value="Dentist">Dentist</option>
+                                        <option value="General Practitioner">General Practitioner</option>
+                                    </select>
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="schedule_day">Schedule</label>
-                                    <input type="text" class="form-control" id="schedule_day" name="schedule_day">
+                                    <input type="date" class="form-control" id="schedule_day" name="schedule_day">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="schedule_time">Schedule Time</label>
-                                    <input type="text" class="form-control" id="schedule_time" name="schedule_time">
+                                    <input type="time" class="form-control" id="schedule_time" name="schedule_time">
                                 </div>
                                 <div class="col-sm-4" style="margin-top: 17px;">
                                     <button type="submit" class="pull-left btn btn-primary">Create</button>
