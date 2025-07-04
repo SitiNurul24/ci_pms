@@ -58,7 +58,52 @@ INSERT INTO `create_generic_name` (`generic_id`, `generic_name`) VALUES
 (11, 'Meloxicam'),
 (12, 'Acyclovir Capsule'),
 (13, 'Simvastatin Tablets'),
-(15, 'Sample Med');
+(15, 'Sample Med'),
+(16, 'Ibuprofen'),
+(17, 'Amoxicillin/Clavulanate'),
+(18, 'Amoxicillin'),
+(19, 'Ciprofloxacin'),
+(20, 'Levofloxacin'),
+(21, 'Azithromycin'),
+(22, 'Cefprozil'),
+(23, 'Sulfamethoxazole/Trimethoprim'),
+(24, 'Metronidazole'),
+(25, 'Fluconazole'),
+(26, 'Ketoconazole'),
+(27, 'Esomeprazole'),
+(28, 'Omeprazole'),
+(29, 'Ranitidine'),
+(30, 'Famotidine'),
+(31, 'Insulin Glargine'),
+(32, 'Insulin Lispro'),
+(33, 'Atorvastatin'),
+(34, 'Rosuvastatin'),
+(35, 'Clopidogrel'),
+(36, 'Warfarin'),
+(37, 'Valsartan'),
+(38, 'Losartan'),
+(39, 'Metoprolol'),
+(40, 'Atenolol'),
+(41, 'Furosemide'),
+(42, 'Levothyroxine'),
+(43, 'Fluoxetine'),
+(44, 'Sertraline'),
+(45, 'Alprazolam'),
+(46, 'Diazepam'),
+(47, 'Lorazepam'),
+(48, 'Loratadine'),
+(49, 'Montelukast'),
+(50, 'Albuterol'),
+(51, 'Budesonide/Formoterol'),
+(52, 'Tiotropium'),
+(53, 'Hydrocodone/Acetaminophen'),
+(54, 'Oxycodone/Acetaminophen'),
+(55, 'Oxycodone'),
+(56, 'Pregabalin'),
+(57, 'Duloxetine'),
+(58, 'Tramadol'),
+(59, 'Prednisone'),
+(60, 'Oseltamivir');
 
 -- --------------------------------------------------------
 
@@ -92,7 +137,57 @@ INSERT INTO `create_medicine_name` (`medicine_name_id`, `medicine_name`, `generi
 (12, 'Mobic', NULL, 'Meloxicam', NULL, NULL),
 (13, 'Zovirax', NULL, 'Acyclovir Capsule', NULL, NULL),
 (14, 'Zocor', NULL, 'Simvastatin Tablets', NULL, NULL),
-(16, 'Med 101', NULL, 'Sample Med', NULL, NULL);
+(16, 'Med 101', NULL, 'Sample Med', NULL, NULL),
+(17, 'Tylenol', NULL, 'Paracetamol', NULL, NULL),
+(18, 'Panadol', NULL, 'Paracetamol', NULL, NULL),
+(19, 'Advil', NULL, 'Ibuprofen', NULL, NULL),
+(20, 'Motrin', NULL, 'Ibuprofen', NULL, NULL),
+(21, 'Augmentin', NULL, 'Amoxicillin/Clavulanate', NULL, NULL),
+(22, 'Amoxil', NULL, 'Amoxicillin', NULL, NULL),
+(23, 'Cipro', NULL, 'Ciprofloxacin', NULL, NULL),
+(24, 'Levaquin', NULL, 'Levofloxacin', NULL, NULL),
+(25, 'Zithromax', NULL, 'Azithromycin', NULL, NULL),
+(26, 'Cefzil', NULL, 'Cefprozil', NULL, NULL),
+(27, 'Bactrim', NULL, 'Sulfamethoxazole/Trimethoprim', NULL, NULL),
+(28, 'Flagyl', NULL, 'Metronidazole', NULL, NULL),
+(29, 'Diflucan', NULL, 'Fluconazole', NULL, NULL),
+(30, 'Nizoral', NULL, 'Ketoconazole', NULL, NULL),
+(31, 'Nexium', NULL, 'Esomeprazole', NULL, NULL),
+(32, 'Prilosec', NULL, 'Omeprazole', NULL, NULL),
+(33, 'Zantac', NULL, 'Ranitidine', NULL, NULL),
+(34, 'Pepcid', NULL, 'Famotidine', NULL, NULL),
+(35, 'Lantus', NULL, 'Insulin Glargine', NULL, NULL),
+(36, 'Humalog', NULL, 'Insulin Lispro', NULL, NULL),
+(37, 'Lipitor', NULL, 'Atorvastatin', NULL, NULL),
+(38, 'Crestor', NULL, 'Rosuvastatin', NULL, NULL),
+(39, 'Plavix', NULL, 'Clopidogrel', NULL, NULL),
+(40, 'Coumadin', NULL, 'Warfarin', NULL, NULL),
+(41, 'Diovan', NULL, 'Valsartan', NULL, NULL),
+(42, 'Cozaar', NULL, 'Losartan', NULL, NULL),
+(43, 'Lopressor', NULL, 'Metoprolol', NULL, NULL),
+(44, 'Tenormin', NULL, 'Atenolol', NULL, NULL),
+(45, 'Norvasc', NULL, 'Amlodipine', NULL, NULL),
+(46, 'Lasix', NULL, 'Furosemide', NULL, NULL),
+(47, 'Synthroid', NULL, 'Levothyroxine', NULL, NULL),
+(48, 'Levoxyl', NULL, 'Levothyroxine', NULL, NULL),
+(49, 'Prozac', NULL, 'Fluoxetine', NULL, NULL),
+(50, 'Zoloft', NULL, 'Sertraline', NULL, NULL),
+(51, 'Xanax', NULL, 'Alprazolam', NULL, NULL),
+(52, 'Valium', NULL, 'Diazepam', NULL, NULL),
+(53, 'Ativan', NULL, 'Lorazepam', NULL, NULL),
+(54, 'Claritin', NULL, 'Loratadine', NULL, NULL),
+(55, 'Singulair', NULL, 'Montelukast', NULL, NULL),
+(56, 'Ventolin', NULL, 'Albuterol', NULL, NULL),
+(57, 'Symbicort', NULL, 'Budesonide/Formoterol', NULL, NULL),
+(58, 'Spiriva', NULL, 'Tiotropium', NULL, NULL),
+(59, 'Vicodin', NULL, 'Hydrocodone/Acetaminophen', NULL, NULL),
+(60, 'Percocet', NULL, 'Oxycodone/Acetaminophen', NULL, NULL),
+(61, 'OxyContin', NULL, 'Oxycodone', NULL, NULL),
+(62, 'Lyrica', NULL, 'Pregabalin', NULL, NULL),
+(63, 'Cymbalta', NULL, 'Duloxetine', NULL, NULL),
+(64, 'Tramadol', NULL, 'Tramadol', NULL, NULL),
+(65, 'Prednisone', NULL, 'Prednisone', NULL, NULL),
+(66, 'Tamiflu', NULL, 'Oseltamivir', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -435,13 +530,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `create_generic_name`
 --
 ALTER TABLE `create_generic_name`
-  MODIFY `generic_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `generic_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `create_medicine_name`
 --
 ALTER TABLE `create_medicine_name`
-  MODIFY `medicine_name_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `medicine_name_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `create_medicine_presentation`

@@ -47,10 +47,10 @@ class Staff extends CI_Controller
 	{
 		if ($this->session->userdata('username') != '') {
 
-			$data['medicine_qty'] = count($this->CommonModel->get_all_info('create_medicine_name')); //
+                        $data['medicine_qty'] = count($this->CommonModel->get_all_info('create_medicine_name','medicine_name')); //
 
 			$data['all_value'] = $this->CommonModel->get_all_info('insert_purchase_info');
-			$data['all_medicine'] = $this->CommonModel->get_all_info('create_medicine_name');
+                        $data['all_medicine'] = $this->CommonModel->get_all_info('create_medicine_name','medicine_name');
 			$data['all_sup'] = $this->CommonModel->get_all_info('create_supplier');
 			//$data['msg'] = $msg;
 			$this->load->view("staff_sales/header");

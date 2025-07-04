@@ -52,7 +52,7 @@ class Main extends CI_Controller
 	{
 		if ($this->session->userdata('username') != '') {
 
-			$data['medicine_qty'] = count($this->CommonModel->get_all_info('create_medicine_name')); //
+                        $data['medicine_qty'] = count($this->CommonModel->get_all_info('create_medicine_name','medicine_name')); //
 
 			//Toda's Puchase Amount
 			$where_array = array(
