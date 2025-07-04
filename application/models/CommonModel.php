@@ -10,10 +10,13 @@ class CommonModel extends CI_Model
 		return $query;
 	}
 	//fetch all data
-	function get_all_info($table_name) {
-		$query = $this->db->get($table_name);
-		return $query->result();
-	}
+        function get_all_info($table_name, $order_by = '', $order_dir = 'ASC') {
+                if (!empty($order_by)) {
+                        $this->db->order_by($order_by, $order_dir);
+                }
+                $query = $this->db->get($table_name);
+                return $query->result();
+        }
 	//fetch all data not null
 	function get_all_info_not_null($table_name,$coloum) {
 //		$query = $this->db->get($table_name);

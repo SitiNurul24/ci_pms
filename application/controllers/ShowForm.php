@@ -30,7 +30,7 @@ class ShowForm extends CI_Controller
 		$data['page_title'] = "Generic Name";
 
 		if ($this->session->userdata('username') != '') {
-			$data['all_value'] = $this->CommonModel->get_all_info('create_generic_name');
+                        $data['all_value'] = $this->CommonModel->get_all_info('create_generic_name','generic_name');
 			$data['msg'] = $msg;
 			$this->load->view("create_option/header", $data);
 			$this->load->view("create_option/generic_name",$data);
@@ -47,8 +47,8 @@ class ShowForm extends CI_Controller
 public function create_medicine_name($msg) {
 		$data['page_title'] = "Medicine Name";
 		if ($this->session->userdata('username') != '') {
-			$data['all_generic'] = $this->CommonModel->get_all_info('create_generic_name');
-			$data['all_value'] = $this->CommonModel->get_all_info('create_medicine_name');
+                        $data['all_generic'] = $this->CommonModel->get_all_info('create_generic_name','generic_name');
+                        $data['all_value'] = $this->CommonModel->get_all_info('create_medicine_name','medicine_name');
 			$data['msg'] = $msg;
 			$this->load->view("create_option/header", $data);
 			$this->load->view("create_option/medicine_name",$data);
@@ -63,8 +63,8 @@ public function create_medicine_name($msg) {
 	public function create_pasien_info($msg) {
 		$data['page_title'] = "Medicine Name";
 		if ($this->session->userdata('username') != '') {
-			$data['all_generic'] = $this->CommonModel->get_all_info('create_generic_name');
-			$data['all_value'] = $this->CommonModel->get_all_info('create_medicine_name');
+                        $data['all_generic'] = $this->CommonModel->get_all_info('create_generic_name','generic_name');
+                        $data['all_value'] = $this->CommonModel->get_all_info('create_medicine_name','medicine_name');
 			$data['msg'] = $msg;
 			$this->load->view("create_option/header", $data);
 			$this->load->view("create_option/pasien_info",$data);
@@ -119,8 +119,8 @@ public function create_medicine_name($msg) {
 		$data['page_title'] = "Medicine Purchase Information";
 		if ($this->session->userdata('username') != '') {
 		$data['all_value'] = $this->CommonModel->get_all_info('insert_purchase_info');
-		$data['all_medicine'] = $this->CommonModel->get_all_info('create_medicine_name');
-		$data['all_generic'] = $this->CommonModel->get_all_info('create_generic_name');
+                $data['all_medicine'] = $this->CommonModel->get_all_info('create_medicine_name','medicine_name');
+                $data['all_generic'] = $this->CommonModel->get_all_info('create_generic_name','generic_name');
 		$data['all_presen'] = $this->CommonModel->get_all_info('create_medicine_presentation');
 		$data['all_sup'] = $this->CommonModel->get_all_info('create_supplier');
 		$data['msg'] = $msg;
@@ -149,8 +149,8 @@ public function create_medicine_name($msg) {
 		$data['page_title'] = "Edit Purchase Information";
 		if ($this->session->userdata('username') != '') {
 			$data['all_value'] = $this->CommonModel->get_all_info('insert_purchase_info');
-			$data['all_medicine'] = $this->CommonModel->get_all_info('create_medicine_name');
-			$data['all_generic'] = $this->CommonModel->get_all_info('create_generic_name');
+                        $data['all_medicine'] = $this->CommonModel->get_all_info('create_medicine_name','medicine_name');
+                        $data['all_generic'] = $this->CommonModel->get_all_info('create_generic_name','generic_name');
 			$data['all_presen'] = $this->CommonModel->get_all_info('create_medicine_presentation');
 			$data['all_sup'] = $this->CommonModel->get_all_info('create_supplier');
 	    	$data['one_value'] = $this->CommonModel->get_allinfo_byid('insert_purchase_info', 'purchase_id', $id);
@@ -168,7 +168,7 @@ public function create_medicine_name($msg) {
 		$data['page_title'] = "Medicine Purchase Statement";
 		if ($this->session->userdata('username') != '') {
 			$data['all_value'] = $this->CommonModel->get_all_info('insert_purchase_info');
-			$data['all_medicine'] = $this->CommonModel->get_all_info('create_medicine_name');
+                        $data['all_medicine'] = $this->CommonModel->get_all_info('create_medicine_name','medicine_name');
 			$data['all_sup'] = $this->CommonModel->get_all_info('create_supplier');
 			$data['msg'] = $msg;
 			$this->load->view("header", $data);
@@ -184,7 +184,7 @@ public function create_medicine_name($msg) {
 		$data['page_title'] = "Supplier Payment";
 		if ($this->session->userdata('username') != '' || $this->session->userdata('username') != 'staff' ) {
 			$data['all_value'] = $this->CommonModel->get_all_info('insert_purchase_info');
-			$data['all_medicine'] = $this->CommonModel->get_all_info('create_medicine_name');
+                        $data['all_medicine'] = $this->CommonModel->get_all_info('create_medicine_name','medicine_name');
 			$data['all_sup'] = $this->CommonModel->get_all_info('create_supplier');
 			$data['msg'] = $msg;
 			$this->load->view("header", $data);
@@ -203,7 +203,7 @@ public function create_medicine_name($msg) {
 		if ($this->session->userdata('username') != '') {
 		//	$data['all_value'] = $this->CommonModel->get_all_info_not_null('insert_purchase_info','medicine_name');
 		    $data['all_value'] = $this->CommonModel->get_all_info('insert_purchase_info');
-			$data['all_medicine'] = $this->CommonModel->get_all_info('create_medicine_name');
+                        $data['all_medicine'] = $this->CommonModel->get_all_info('create_medicine_name','medicine_name');
 			$data['all_sup'] = $this->CommonModel->get_all_info('create_supplier');
 			$data['msg'] = $msg;
 			$this->load->view("header", $data);
